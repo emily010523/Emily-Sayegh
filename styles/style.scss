@@ -1,0 +1,280 @@
+//VARIABLES//
+
+//COLORS//
+$charcoal: #262626;
+$offwhite: #FFF7ED;
+$pink: #EAA7C8;
+$yellow: #F0CA2C;
+$lightyellow: #FAE9B8;
+$blue: #9ED7E0;
+$red: #C73F3F; 
+$orange: #EB773C;
+$purple: #8780C3;
+$green: #7DAF5E;
+$grey: #4F4B5B;
+
+
+//FONTS//
+// Outfit Regular
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Outfit Medium
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Outfit SemiBold
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-scale: (
+  byline: (
+    family: "Outfit",
+    size: 0.875rem,
+    line: 1.25rem,
+    weight: 400
+  ),
+  p: (
+    family: "Outfit",
+    size: 1rem,
+    line: 1.5rem,
+    weight: 400
+  ),
+  pbold: (
+    family: "Outfit",
+    size: 1rem,
+    line: 1.5rem,
+    weight: 600
+  ),
+  h4bold: (
+    family: "Outfit",
+    size: 1.25rem,
+    line: 1.75rem,
+    weight: 600
+  ),
+  h4: (
+    family: "Outfit",
+    size: 1.25rem,
+    line: 1.75rem,
+    weight: 600
+  ),
+  h3: (
+    family: "Outfit",
+    size: 1.5rem,
+    line: 2.25rem,
+    weight: 600
+  ),
+  h2: (
+    family: "Outfit",
+    size: 2rem,
+    line: 2.5rem,
+    weight: 600
+  ),
+  h1: (
+    family: "Outfit",
+    size: 3rem,
+    line: 4rem,
+    weight: 600
+  ),
+  display: (
+    family: "Outfit",
+    size: 6rem,
+    line: 7.25,
+    weight: 600
+  )
+);
+
+@mixin font($key) {
+  $style: map-get($font-scale, $key);
+
+  font-family: map-get($style, family);
+  font-size: map-get($style, size);
+  line-height: map-get($style, line);
+  font-weight: map-get($style, weight);
+}
+
+//GLOBAL//
+html { 
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    p {
+        @include font(p);
+        margin: 0;
+        padding: 0;
+    }
+    h4 {
+        @include font(h4);
+        margin: 0;
+        padding: 0;
+    }
+    h3 {
+        @include font(h3);
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        @include font(h2);
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        @include font(h1);  
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        @include font(pbold);
+        color: $charcoal;
+        text-decoration: none;
+    }
+}
+
+.wrapper {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.icon-left {
+    display: flex;
+    gap: .375rem;
+    align-items: center;
+}
+
+.break {
+    margin-bottom: 1rem;
+}
+
+.button-large {
+    background-color: $yellow;
+    padding: .75rem 3rem;
+    border: .25rem solid $charcoal;
+    box-shadow: 0 .2rem 0 $charcoal;
+    border-radius: .375rem;
+    a {
+        font-weight: 600;
+    }
+}
+
+.button-small {
+    background-color: $pink;
+    padding: .75rem 2rem;
+    border: .25rem solid $charcoal;
+    box-shadow: 0 .2rem 0 $charcoal;
+    border-radius: .375rem;
+    a {
+        font-weight: 600;
+    }
+}
+
+//HOME HERO//
+.welcome-hero {
+    background-color: $lightyellow;
+    border-bottom: solid .375rem $charcoal;
+    padding: 4rem 0 6.375rem 0;
+    .container {
+        width: 40%;
+        margin: 4rem 0 4rem 0;
+    }
+}
+
+///NAV//
+nav {
+    .nav-row {
+        background-color: $charcoal;
+        display: flex;
+        justify-content: flex-end;
+        gap: 2rem;
+        padding: 1.5rem 2rem;
+        border-radius: .375rem;
+    }
+    p {
+       display: inline;
+       color: $offwhite;
+    }
+}
+
+.contact-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    background-color: #9ED7E0;
+    border-radius: .375rem;
+    border: .25rem solid $charcoal;
+    box-shadow: 0 .375rem 0 $charcoal;
+    p {
+        @include font(pbold);
+    }
+    a {
+        @include font(pbold);
+        color: $charcoal;
+        text-decoration: none;
+    }
+}
+
+//HOME SECTION 2//
+.home-sc2 {
+    padding-top: 6rem;
+    border-bottom: solid .375rem $charcoal;
+    .center-title {
+        text-align: center;
+        padding-bottom: 4rem;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+//HOME SECTION 3//
+.home-sc3 {
+    background-color: $lightyellow;
+    border-bottom: solid .375rem $charcoal;
+    padding: 6rem 0 6rem 0;
+    .title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4.25rem;
+    }
+    .project-preview {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+}
+
+//FOOTER//
+.top-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 6rem 0 2rem 0;
+    border-bottom: .25rem solid $charcoal;
+}
+
+.bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0 2rem 0;
+}
+
