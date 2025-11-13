@@ -1,3 +1,133 @@
-body {
-    background-color: pink;
+//VARIABLES//
+
+//COLORS//
+$charcoal: #262626;
+$offwhite: #FFF7ED;
+$pink: #EAA7C8;
+$yellow: #F0CA2C;
+$blue: #9ED7E0;
+$red: #C73F3F; 
+$orange: #EB773C;
+$purple: #8780C3;
+$green: #7DAF5E;
+$grey: #4F4B5B;
+
+
+//FONTS//
+// Outfit Regular
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Outfit Medium
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Outfit SemiBold
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-scale: (
+  byline: (
+    family: "Outfit",
+    size: 0.875rem,
+    line: 1.25rem,
+    weight: 400
+  ),
+  p: (
+    family: "Outfit",
+    size: 1rem,
+    line: 1.375rem,
+    weight: 400
+  ),
+  pbold: (
+    family: "Outfit",
+    size: 1rem,
+    line: 1.375rem,
+    weight: 600
+  ),
+  h4bold: (
+    family: "Outfit",
+    size: 1.25rem,
+    line: 1.75rem,
+    weight: 600
+  ),
+  h4: (
+    family: "Outfit",
+    size: 1.25rem,
+    line: 1.75rem,
+    weight: 600
+  ),
+  h3: (
+    family: "Outfit",
+    size: 1.5rem,
+    line: 2.25rem,
+    weight: 600
+  ),
+  h2: (
+    family: "Outfit",
+    size: 2rem,
+    line: 2.5rem,
+    weight: 600
+  ),
+  h1: (
+    family: "Outfit",
+    size: 3rem,
+    line: 4rem,
+    weight: 600
+  ),
+  display: (
+    family: "Outfit",
+    size: 6rem,
+    line: 7.25,
+    weight: 600
+  )
+);
+
+@mixin font($key) {
+  $style: map-get($font-scale, $key);
+
+  font-family: map-get($style, family);
+  font-size: map-get($style, size);
+  line-height: map-get($style, line);
+  font-weight: map-get($style, weight);
+}
+
+//GLOBAL//
+html { 
+    font-size: 16px;
+}
+
+///NAV//
+nav {
+    width: 75%;
+    margin: 0 auto;
+    .nav-row {
+        background-color: $charcoal;
+        display: flex;
+        justify-content: flex-end;
+        gap: 2rem;
+        padding: 1.5rem 2rem;
+        border-radius: .375rem;
+    }
+    p {
+       display: inline-block;
+       margin: 0;
+       color: $offwhite;
+       @include font(p);
+    }
 }
